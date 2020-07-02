@@ -3,8 +3,12 @@ pipeline {
     stages {
         stage("build") {
             steps {
+                values = [:]
+                currentWs = sh(returnStdout: true, script: 'pwd').trim()
                 echo "build stage "
                 echo "building"
+                echo "${currentWs}"
+                 
                    }
                 }   
         stage("Test") {
